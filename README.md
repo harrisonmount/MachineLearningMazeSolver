@@ -54,7 +54,7 @@ To note specifically, the system created in this paper using episodic formulatio
 
 Using JavaScript and the p5.js graphics library, the maze structure is based of an array of &quot;Cell&quot; objects, with specific parameters. The most important parameters, of 11, are its location in the array (N-by-N size, using simple array math to navigate &quot;up&quot; and &quot;down&quot;), if the cell is the &quot;current&quot; cell (where the agent is), if the cell is a block (used to create barriers in the maze), a visit count within one iteration, its current reward amount (Q), and its total visits (for graphics). Figure 2 and 3 show 20 by 20 initial state mazes, one with no blocks, and the other with 70 randomly generated blocks.
 
-![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/blankmaze.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/blankMaze.png)
 
 _Fig. 2 Blank Maze (Initial State)_
 
