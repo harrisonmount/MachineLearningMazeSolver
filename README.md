@@ -178,4 +178,4 @@ As shown, the behavior of this system made branches similar to Figure 19&#39;s h
 
 # Conclusion
 
-## In conclusion, modeling the behavior of a reinforcement learning program has been an extremely rewarding process. The ability to create an environment and adjust parameters allowing the creator to essentially explore it, is a true joy only computer scientists can experience.
+In conclusion, modeling the behavior of a reinforcement learning program has been an extremely rewarding process. The ability to create an environment and adjust parameters allowing the creator to essentially explore it, is a true joy only computer scientists can experience.
