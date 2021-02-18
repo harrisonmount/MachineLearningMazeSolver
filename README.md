@@ -22,7 +22,7 @@ Reinforcement Learning is a branch of Machine Learning that, rather than the tra
 
 A useful example to break down how reinforcement learning works is the N-armed bandit problem, a playful display of the explore vs exploit method, a core function of any reinforcement learning algorithm.
 
-![](RackMultipart20210218-4-1tchwt9_html_717e138b4f69a4a3.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/slot.png)
 
 Fig. 1 Set of &quot;Slot Machines&quot;
 
