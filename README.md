@@ -74,7 +74,7 @@ Also, the program generates a heat map of the maze based on how many times a cel
 
 Initial testing for the algorithm used a 10 by 10 by X maze (x meaning the number of random barriers appearing in the maze) to demonstrate agent behavior. The initial 3, using X values of 10, 20, and 30, with 75% greedy behavior (.25 epsilon).
 
-![](RackMultipart20210218-4-1tchwt9_html_bd90888671d04789.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10.png)
 
 Fig. 4 10x10x10 Maze
 
