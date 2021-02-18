@@ -10,7 +10,7 @@ hmm101@miami.edu
 
 **_This paper will discuss the development, results, and behavior of a machine learning program that solves an N-by-N size maze using reinforcement learning tactics and varying heuristics by which the program learns to navigate._**
 
-**_Keywords – Machine Learning, Reinforcement Learning, Agent, Epsilon-Greedy, Episodic, JavaScript, p5.js, Cell, Respawn, Pop, Stack, RGB, IMU, GPS, Optic Flow, ACL, Swarm Intelligence_**
+**_Keywords – Machine Learning, Reinforcement Learning, Agent, Epsilon-Greedy, Episodic, JavaScript, p5.js, Cell, Respawn, Pop, Stack, RGB_**
 
 # Introduction
 
@@ -42,7 +42,7 @@ Input: user-specified parameter E, a set of actions (ai) and their initial value
 4. Update the value of ai using the following equation [1]
 5. Set ki = ki + 1 and return to 1
 
-![](RackMultipart20210218-4-1tchwt9_html_f127a291ba0c7ae1.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/eq1.png)
 
 Equation [1]
 
@@ -56,11 +56,11 @@ To note specifically, the system created in this paper using episodic formulatio
 
 Using JavaScript and the p5.js graphics library, the maze structure is based of an array of &quot;Cell&quot; objects, with specific parameters. The most important parameters, of 11, are its location in the array (N-by-N size, using simple array math to navigate &quot;up&quot; and &quot;down&quot;), if the cell is the &quot;current&quot; cell (where the agent is), if the cell is a block (used to create barriers in the maze), a visit count within one iteration, its current reward amount (Q), and its total visits (for graphics). Figure 2 and 3 show 20 by 20 initial state mazes, one with no blocks, and the other with 70 randomly generated blocks.
 
-![](RackMultipart20210218-4-1tchwt9_html_d0fe3164c294ac09.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/blankmaze.png)
 
 Fig. 2 Blank Maze (Initial State)
 
-![](RackMultipart20210218-4-1tchwt9_html_2cd03da71077a52e.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/initialstate.png)
 
 Fig. 3 Randomly Generated Blocks Maze (Initial State)
 
@@ -78,25 +78,25 @@ Initial testing for the algorithm used a 10 by 10 by X maze (x meaning the numbe
 
 Fig. 4 10x10x10 Maze
 
-![](RackMultipart20210218-4-1tchwt9_html_21562db0cf62c3b1.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x20.png)
 
 Fig. 5 10x10x20 Maze
 
-![](RackMultipart20210218-4-1tchwt9_html_c287263527f0f283.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30.png)
 
 Fig. 6 10x10x30
 
 The resulting graphs show steps per iteration vs iteration count for each maze using a CSV data file export function in p5.js.
 
-![](RackMultipart20210218-4-1tchwt9_html_9b3926822e526a74.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10Graph.png)
 
 Fig. 7 10x10x10 Graph
 
-![](RackMultipart20210218-4-1tchwt9_html_a42530678130eb13.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x20Graph.png)
 
 Fig. 8 10x10x20 Graph
 
-![](RackMultipart20210218-4-1tchwt9_html_2dbaf1666531e5b6.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30Graph.png)
 
 Fig. 9 10x10x30 Graph
 
@@ -106,21 +106,21 @@ These graphs show extremely similar behavior despite varying levels of randomly 
 
 Here, a 10 by 10 maze with 10 and 30 random blocks are shown, this time with a higher epsilon value of .4, choosing a random available action 40% of the time.
 
-![](RackMultipart20210218-4-1tchwt9_html_fe0e1c514d968472.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10lowgreed.png)
 
 Fig. 10 10x10x10 Maze with Lower Greed
 
-![](RackMultipart20210218-4-1tchwt9_html_985fddcf22d2db7d.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30lowgreed.png)
 
 Fig. 11 10x10x30 Maze with Lower Greed
 
 The resulting graphs display ample variability due to the unpredictable behavior of a less greedy agent, which never fully converges to a single solution.
 
-![](RackMultipart20210218-4-1tchwt9_html_d73d20e28d67df49.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10lowgreedgraph.png)
 
 Fig. 12 10x10x10 Lower Greed Graph
 
-![](RackMultipart20210218-4-1tchwt9_html_32f0a409daa46809.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30lowgreedgraph.png)
 
 Fig. 13 10x10x30 Lower Greed Graph
 
@@ -128,11 +128,11 @@ Fig. 13 10x10x30 Lower Greed Graph
 
 After viewing the behavior of varying greed and barrier generation in a 10 by 10 maze, a new variable is introduced to see how the program changes: randomizing the starting location of the agent each iteration. This was done by picking a random cell from the valid cells array each time the iteration begins and placing the agent in such cell. The resulting graphs would never converge, but it is nonetheless interesting to see how the heatmap displays the behavior of a randomized, yet deterministic system.
 
-![](RackMultipart20210218-4-1tchwt9_html_9d3ec1ee4964530b.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10random.png)
 
 Fig. 14 10x10x10 Random Respawn Maze
 
-![](RackMultipart20210218-4-1tchwt9_html_9b5dc828bb531652.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30random.png)
 
 Fig. 15 10x10x30 Random Respawn Maze
 
