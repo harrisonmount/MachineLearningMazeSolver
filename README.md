@@ -1,11 +1,9 @@
 # Reinforcement Learning: Episodic Epsilon-Greedy Maze Solving Algorithm and Reward System Behavior Analysis
 
-![](RackMultipart20210218-4-1tchwt9_html_639ef7a2988371a4.gif)
-
-Harrison Mount
-_College of Engineering_
-_University of Miami_
-_Coral Gables, FL_
+Harrison Mount\
+_College of Engineering_\
+_University of Miami_\
+_Coral Gables, FL_\
 hmm101@miami.edu
 
 **_This paper will discuss the development, results, and behavior of a machine learning program that solves an N-by-N size maze using reinforcement learning tactics and varying heuristics by which the program learns to navigate._**
