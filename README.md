@@ -22,7 +22,7 @@ A useful example to break down how reinforcement learning works is the N-armed b
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/slot.png)
 
-Fig. 1 Set of &quot;Slot Machines&quot;
+_Fig. 1 Set of &quot;Slot Machines&quot;_
 
 Imagine a set of infinite slot machines, each varying in individual average reward. Say, machine 2 averages a $3 return where machine 200 averages $0.50 return, the goal would be, obviously, to get as much money as possible from the slot machines, while minimizing the amount of coins used to generate such profit. A scientist would approach this with &quot;brute force&quot;, probing every machine, recording the outcome for each, then returning to the machine with the highest return. This is problematic because with infinite machines, it would cost an infinite amount of money to interact with them, not ideal for the scientist&#39;s wallet. A statistician may approach this using an optimal stopping algorithm, only probing around 30% of the machines before choosing one to stick with. An avid casino-goer may choose one machine and sit there all night… However, a computer scientist would gage the opportunity cost of exploring new machines vs the comfort of staying at one with a decent average return. This explore (find new machines) vs exploit (stay at the same machine) methodology is the backbone of reinforcement learning behavior, which seeks to solve a system, like a set of slot machines, for the best overall reward.
 
@@ -42,7 +42,7 @@ Input: user-specified parameter E, a set of actions (ai) and their initial value
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/eq1.png)
 
-Equation [1]
+_Equation [1]_
 
 This equation numerically represents the concepts mentioned earlier, with K being the number of previous actions, R being the amount you reward an action by, and Q being the &quot;memory&quot; of the agent. The E in the pseudo code earlier is referencing epsilon – the variable by which the agent explores (ranging from 0-1, 0 being very greedy, 1 being always exploring).
 
@@ -56,11 +56,11 @@ Using JavaScript and the p5.js graphics library, the maze structure is based of 
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/blankmaze.png)
 
-Fig. 2 Blank Maze (Initial State)
+_Fig. 2 Blank Maze (Initial State)_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/initialstate.png)
 
-Fig. 3 Randomly Generated Blocks Maze (Initial State)
+_Fig. 3 Randomly Generated Blocks Maze (Initial State)_
 
 Agent behavior follows the steps in the pseudo code, determining where to move next by comparing available options and going with the best one, or randomly picking one depending on the greed value of the program. Other operations to note: the default respawn location of the agent after an iteration is the top left corner, the agent adds the cells it visits to a new array and rewards them subsequently after the agent reaches the goal, rather than having to check each cell in the maze to see if it has been visited, and rewards based off how many steps away from the goal it is (using a counter and the &quot;pop&quot; function of stacks).
 
@@ -74,29 +74,29 @@ Initial testing for the algorithm used a 10 by 10 by X maze (x meaning the numbe
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10.png)
 
-Fig. 4 10x10x10 Maze
+_Fig. 4 10x10x10 Maze_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x20.png)
 
-Fig. 5 10x10x20 Maze
+_Fig. 5 10x10x20 Maze_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30.png)
 
-Fig. 6 10x10x30
+_Fig. 6 10x10x30_
 
 The resulting graphs show steps per iteration vs iteration count for each maze using a CSV data file export function in p5.js.
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10Graph.png)
 
-Fig. 7 10x10x10 Graph
+_Fig. 7 10x10x10 Graph_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x20Graph.png)
 
-Fig. 8 10x10x20 Graph
+_Fig. 8 10x10x20 Graph_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30Graph.png)
 
-Fig. 9 10x10x30 Graph
+_Fig. 9 10x10x30 Graph_
 
 These graphs show extremely similar behavior despite varying levels of randomly generated barriers. It seems to show that, as long as the maze is solvable with a best path (only moving down and right) it will solve it in around 6 iterations with the minimum amount of moves N-1 (19 steps in the case of a 20 by 20 maze).
 
@@ -106,21 +106,21 @@ Here, a 10 by 10 maze with 10 and 30 random blocks are shown, this time with a h
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10lowgreed.png)
 
-Fig. 10 10x10x10 Maze with Lower Greed
+_Fig. 10 10x10x10 Maze with Lower Greed_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30lowgreed.png)
 
-Fig. 11 10x10x30 Maze with Lower Greed
+_Fig. 11 10x10x30 Maze with Lower Greed_
 
 The resulting graphs display ample variability due to the unpredictable behavior of a less greedy agent, which never fully converges to a single solution.
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10lowgreedgraph.png)
 
-Fig. 12 10x10x10 Lower Greed Graph
+_Fig. 12 10x10x10 Lower Greed Graph_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30lowgreedgraph.png)
 
-Fig. 13 10x10x30 Lower Greed Graph
+_Fig. 13 10x10x30 Lower Greed Graph_
 
 ## 10x10xX – Random Respawn 90% Greedy
 
@@ -128,11 +128,11 @@ After viewing the behavior of varying greed and barrier generation in a 10 by 10
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10random.png)
 
-Fig. 14 10x10x10 Random Respawn Maze
+_Fig. 14 10x10x10 Random Respawn Maze_
 
 ![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x30random.png)
 
-Fig. 15 10x10x30 Random Respawn Maze
+_Fig. 15 10x10x30 Random Respawn Maze_
 
 Random respawn systems required many more iterations for a behavioral pattern to surface from the heatmap.
 
@@ -140,19 +140,19 @@ Random respawn systems required many more iterations for a behavioral pattern to
 
 Once the behavior of the system became well known, experiments were made on maps with varying parameters to explore new behavior and patterns. The first being a common reoccurring &quot;S&quot; shape in extremely greedy agents.
 
-![](RackMultipart20210218-4-1tchwt9_html_b39f108de9696570.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/10x10x10highgreed.png)
 
-Fig. 16 10x10x10 100% Greed Maze
+_Fig. 16 10x10x10 100% Greed Maze_
 
-![](RackMultipart20210218-4-1tchwt9_html_e621cf6cac85ae9f.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/20x20x0.png)
 
-Fig. 17 20x20x0 100% Greed Maze
+_Fig. 17 20x20x0 100% Greed Maze_
 
 These examples show how naïve an agent can be with high greed, only following one solution, reinforcing its results, rather than probing its other options to find a more optimal one.
 
-![](RackMultipart20210218-4-1tchwt9_html_eeda5ce64578faf9.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/20x20x0_80.png)
 
-Fig. 18 20x20x0 80% Greed Maze
+_Fig. 18 20x20x0 80% Greed Maze_
 
 The maze above is similar to Figure 17, but with less greed. The &quot;blurriness&quot; of the path is a result of the random actions taken by the agent.
 
@@ -160,9 +160,9 @@ The maze above is similar to Figure 17, but with less greed. The &quot;blurrines
 
 Behavior from Figure 14 previously showed an interesting pattern, which was experimented with on a larger scale shown below.
 
-![](RackMultipart20210218-4-1tchwt9_html_9b0f745ae8e92e8b.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/20x20x0random.png)
 
-Fig. 19 20x20x0 80% Greed Maze
+_Fig. 19 20x20x0 80% Greed Maze with Random Respawn_
 
 The random respawn pattern displays a similar shape to the random respawn pattern of the 10 by 10 maze previously shown. Two &quot;highway&quot; paths that emerge near the goal point attract the agent towards them before sending the agent to the bottom right corner.
 
@@ -170,9 +170,9 @@ The random respawn pattern displays a similar shape to the random respawn patter
 
 The final experimentation with the reward system is a maze with random respawn, and a goal point at the center. 80% greed was used.
 
-![](RackMultipart20210218-4-1tchwt9_html_c48172390d87f57c.png)
+![](https://github.com/harrisonmount/MachineLearningMazeSolver/blob/master/Photos/24x24x0centergoal.png)
 
-Fig. 20 24x24x0 Random Respawn
+_Fig. 20 24x24x0 Random Respawn_
 
 As shown, the behavior of this system made branches similar to Figure 19&#39;s heatmap. The emergence of &quot;highways&quot; which the agent is attracted to, shows how the algorithm attempts to tackle a random system, finding a solution in the chaos.
 
