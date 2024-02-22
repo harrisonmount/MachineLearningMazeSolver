@@ -28,7 +28,7 @@ Imagine a set of infinite slot machines, each varying in individual average rewa
 
 ## Reinforcement Learning
 
-Reinforcement learning mimics this behavior of choosing actions based off variable reward and experience in a system. Computationally, an agent keeps track of these rewards, and distributes new ones based on performance, all in real time (and without previous exposure to the system). Simply, every time a system iterates, it updates how the agent will act the next time it is run based of certain variables.
+Reinforcement learning mimics this behavior of choosing actions based off variable reward and experience in a system. An agent keeps track of these rewards, and distributes new ones based on performance, all in real time (and without previous exposure to the system). Simply, every time a system iterates, it updates how the agent will act the next time it is run based of certain variables.
 
 Rewarding in reinforcement learning, specifically in episodic systems, is manifested through the following pseudo code:
 
